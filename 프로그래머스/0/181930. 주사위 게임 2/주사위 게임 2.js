@@ -1,19 +1,15 @@
 function solution(a, b, c) {
-    if (a === b && a === c) {
-        return (a + b + c) * 
-            ( Math.pow(a, 2) + 
-            Math.pow(b, 2) + 
-            Math.pow(c, 2) 
-            ) * 
-            ( Math.pow(a, 3) +
-              Math.pow(b, 3) +
-              Math.pow(c, 3)
-            )
-    }
-    else if (a !== b && a !== c && b !== c) {
-        return a + b + c;
-    } 
-    else {
-        return (a + b + c) * ( Math.pow(a, 2) + Math.pow(b, 2) + Math.pow(c, 2) );
+    const selectCnt = new Set([a, b, c]).size;
+    
+    switch (selectCnt) {
+        case 3: 
+            return a + b + c;
+        case 2: 
+            return (a + b + c) * 
+                   (a ** 2 + b ** 2 + c ** 2);
+        case 1:
+            return (a + b + c) *
+                   (a ** 2 + b ** 2 + c ** 2) *
+                   (a ** 3 + b ** 3 + c ** 3);       
     }
 }
