@@ -1,41 +1,8 @@
 function solution(ineq, eq, n, m) {
-    var answer = 0;
+    if (eq === '=' && n === m) return 1;
+    if (ineq === '>' && n > m) return 1;
+    if (ineq === '<' && n < m) return 1;
     
-    if (eq === '=' && ineq === '>') {
-        if (n >= m) {
-            answer = 1;
-        }
-        else {
-            answer = 0;
-        }
-    }
-    
-    else if (eq === '=' && ineq === '<') {
-        if (n <= m) {
-            answer = 1;
-        }
-        else {
-            answer = 0;
-        }
-    }
-    
-    else if (eq === '!' && ineq === '>') {
-        if (n > m) {
-            answer = 1;
-        }
-        else {
-            answer = 0;
-        }
-    }
-    
-    else if (eq === '!'  && ineq === '<') {
-        if (n < m) {
-            answer = 1;
-        }
-        else {
-            answer = 0;
-        }
-    }
 
-    return answer;
+    return 0;
 }
